@@ -1,0 +1,81 @@
+:root {
+    --sidebar-width: 29%;
+
+    /* gap values for sidebar */
+    --sidebar-section-gap: var(--section-gap); /* section gap from main.css*/
+    /* special fonts for some text */
+    --font-sm: .8rem;
+    /* image width for sidebar */
+    --sidebar-img-width: 2.3rem;
+}
+@media only screen and (max-width:992px) {
+    :root {
+        --sidebar-width: 32%
+    }
+}
+@media only screen and (max-width:768px) {
+    aside {
+        display: none;
+    }
+}
+/* starts specific styles */
+aside {
+    min-width: var(--sidebar-width);
+}
+/* for main gap between heading and queue list */
+aside>div.d-flex {
+    gap: var(--sidebar-section-gap);
+}
+
+/* for queue more options -- when clicking queue option on sidebar */
+.queue-more-options {
+    top: calc(var(--xl-font));
+    right: 0;
+    padding: 0 var(--gap-s);
+    background-color: var(--primary-text);
+}
+.queue-more-options p {
+    color: var(--clr-black);
+    font-weight: bold;
+    font-size: var(--xs-font);
+    text-wrap: nowrap;
+    padding: var(--gap-xs);
+}
+.queue-more-options p:not(:last-child) {
+    border-bottom: 1px solid var(--clr-black);
+}
+
+
+/* ------------------------------------------ music queue section */
+/* independent scroling for music section */
+#aside-music-section {
+    overflow-y: auto;
+    max-height: calc(100vh - var(--top-margin) - var(--top-padding));
+}
+#aside-music-section ul {
+    padding: var(--gap-s);
+}
+/* css for every queue item */
+.music-queue-item {
+    width: 100%;
+}
+.music-queue-item::before {
+    padding-left: 0;
+}
+.queue-item-wrapper {
+    padding-block: var(--gap-xs);    
+    padding: var(--gap-xxs) var(--gap-xs);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.queue-item-wrapper img {
+    width: var(--sidebar-img-width);
+    aspect-ratio: 1;   
+    object-fit: cover;
+}
+/* font-for music name */
+.queue-item-details h5 {
+    font-size: var(--xs-font);
+}

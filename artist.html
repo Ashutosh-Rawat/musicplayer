@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <script src="https://kit.fontawesome.com/534bf90a70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/artist-page.css">
+    </head>
+<body>
+    <div class="container position-relative">
+        <header>
+            <nav class="d-flex">
+              <section class="left-section d-flex">
+                <a class="d-flex" href="#">
+                  <img class="navbar-item" src="assets/images/logo/music-player-logo.png" alt="">
+                  <h2>
+                    <p class="font-md">Ninja</p>
+                    <p class="font-xl">Studio</p>
+                  </h2>
+                </a>
+                <div class="favourites pointer-hover">
+                  <span>Favourites</span>
+                </div>
+              </section>
+              <section class="right-section d-flex">
+                <div class="search-bar position-relative">
+                    <i class="fa-solid fa-magnifying-glass font-xs position-absolute"></i>
+                    <input class="font-xs h-100 w-100" type="text" name="" id="" placeholder="Search artists,albums and songs">
+                    <i class="fa-solid fa-microphone font-xs position-absolute pointer-hover"></i>
+                </div>
+                <div class="notification">
+                  <i class="pointer-hover font-l fa-regular fa-bell"></i>
+                </div>
+                <div class="profile navbar-item">
+                  <img class="w-100 h-100 circular pointer-hover" src="assets/images/artists/artist-mohit-chauhan.jpeg" alt="">
+                </div>
+              </section>
+            </nav>
+        </header> 
+        <main class="d-flex">
+            <section id="main-content" class="scroll-behaviour">
+                <div class="content-divider d-flex col gap-l align-start">
+                    <section id="artist-info">
+                        <div class="artist-info--img">
+                        </div>
+                        <div class="artist-info-text d-flex col gap-l align-start">
+                            <section id="artist-info--upper">
+                                <div class="artist-info--heading d-flex">
+                                    <h2 class="font-l">Imagine Dragons</h2>
+                                    <p class="font-xs grey-font ws-nowrap">1024 Followers</p>
+                                </div>
+                                <h6 class="artist-info--tagline font-s d-inline-block">
+                                    American Pop Band
+                                </h6>
+                                <p class="artist-info--desc font-xs">
+                                    Imagine Dragons are an American pop rock band formed in 2008, 
+                                    based in Las Vegas, Nevada. The band currently consisting of 
+                                    lead singer Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee
+                                     and drummer Daniel Platzman.
+                                </p>
+                            </section>
+                            <section id="artist-info--lower" class="d-flex col gap-s align-start">
+                                <div class="d-flex gap-xl">
+                                    <button class="bg-btn play-music">Play All</button>
+                                    <button class="no-bg-btn">Follow</button>
+                                </div>
+                                <span class="font-xs">305 Tracks | 124 Albums</span>
+                            </section>
+                        </div>
+                    </section>
+                    <ul id="artist-songs" class="w-100 counter-wrapper scroll-behaviour">
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Demons.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Demons</h6>
+                                    <p class="font-xs grey-font">Imagine Dragons</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Fireflies.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Fireflies</h6>
+                                    <p class="font-xs grey-font">OWL CITY</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Starving.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Starving</h6>
+                                    <p class="font-xs grey-font">Hailee</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Cold-Water.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Cold Water</h6>
+                                    <p class="font-xs grey-font">Justin</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Uptown-Funk.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Uptown Funk</h6>
+                                    <p class="font-xs grey-font">Bruno Mars</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Blinding-Lights.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Blinding Lights</h6>
+                                    <p class="font-xs grey-font">Weeknd</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Demons.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Demons</h6>
+                                    <p class="font-xs grey-font">Imagine Dragons</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Fireflies.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Fireflies</h6>
+                                    <p class="font-xs grey-font">OWL CITY</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Starving.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Starving</h6>
+                                    <p class="font-xs grey-font">Hailee</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Cold-Water.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Cold Water</h6>
+                                    <p class="font-xs grey-font">Justin</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Uptown-Funk.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Uptown Funk</h6>
+                                    <p class="font-xs grey-font">Bruno Mars</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="artist-song-item">
+                            <div class="artist-songs--left-section d-flex gap-m h-100 numbered">
+                                <img src="assets/images/songs/English-top/Blinding-Lights.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                    <h6 class="font-xs">Blinding Lights</h6>
+                                    <p class="font-xs grey-font">Weeknd</p>
+                                </span>
+                            </div>
+                            <div class="artist-songs--right-section d-flex gap-xl">
+                                <i class="fa-regular fa-heart font-xs grey-font"></i>
+                                <i class="fa-solid fa-plus font-xs grey-font"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <aside class="">
+                <section id="similar-artists" class="w-100">
+                    <div class="d-flex w-100">
+                        <h3 class="font-md">Similar Artists</h3>
+                        <p class="font-xs grey-font pointer-hover">View All</p>
+                    </div>
+                    <!-- similar artists queue -->
+                    <ul class="d-flex col gap-l">
+                        <li class="similar-artist-item gap-xl w-100">
+                            <div class="play-button">
+                                <img class="" src="assets/images/albums/album-the-tortured.jpeg" alt="">
+                            </div>
+                            <div class="artist-info-wrapper">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <span class="w-100 d-flex align-start gap-xs">
+                                    <h5 class="artist-font pointer-hover">The Tortured</h5>
+                                    <p class="font-xs grey-font">4:34</p>
+                                </span>
+                                <p class="font-xs grey-font">Taylor Swift</p>
+                            </div>
+                        </li>
+                        <li class="similar-artist-item gap-xl w-100">
+                            <div class="play-button">
+                                <img class="" src="assets/images/albums/album-24k-magic.jpeg" alt="">
+                            </div>
+                            <div class="artist-info-wrapper">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <span class="w-100 d-flex align-start gap-xs">
+                                    <h5 class="arist-font pointer-hover">24K Magic</h5>
+                                    <p class="font-xs grey-font">4:34</p>
+                                </span>
+                                <p class="font-xs grey-font">Bruno Mars</p>
+                            </div>
+                        </li>
+                        <li class="similar-artist-item gap-xl w-100">
+                            <div class="play-button">
+                                <img class="" src="assets/images/albums/album-2002.jpeg" alt="">
+                            </div>
+                            <div class="artist-info-wrapper">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <span class="w-100 d-flex align-start gap-xs">
+                                    <h5 class="artist-font pointer-hover">2002</h5>
+                                    <p class="font-xs grey-font">4:34</p>
+                                </span>
+                                <p class="font-xs grey-font">Anne Marie</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section id="recently-played" class="w-100">
+                    <div id="aside-heading-section" class="d-flex w-100">
+                        <h3 class="font-md">Recently Played</h3>
+                        <p class="font-xs grey-font pointer-hover">View All</p> 
+                    </div>
+                    <!-- music queue starts here -->
+                    <div id="aside-music-section" class="w-100 scroll-behaviour">
+                        <ul class="d-flex col gap-l counter-wrapper">
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Fireflies.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Fireflies</h5>
+                                <p class="grey-font font-xs">OWL CITY</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Starving.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Starving</h5>
+                                <p class="grey-font font-xs">Hailee Steinfeld</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Cold-Water.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Cold Water</h5>
+                                <p class="grey-font font-xs">Justin Bieber</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Blinding-Lights.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Blinding Lights</h5>
+                                <p class="grey-font font-xs">Weeknd</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Uptown-Funk.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Uptown Funk</h5>
+                                <p class="grey-font font-xs">Bruno Mars</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Purple-Lamborghini.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Purple Lamborghini</h5>
+                                <p class="grey-font font-xs">Rick Ross</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Fireflies.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Fireflies</h5>
+                                <p class="grey-font font-xs">OWL CITY</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Starving.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Starving</h5>
+                                <p class="grey-font font-xs">Hailee Steinfeld</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Cold-Water.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Cold Water</h5>
+                                <p class="grey-font font-xs">Justin Bieber</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Blinding-Lights.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Blinding Lights</h5>
+                                <p class="grey-font font-xs">Weeknd</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Uptown-Funk.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Uptown Funk</h5>
+                                <p class="grey-font font-xs">Bruno Mars</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        <li class="music-queue-item numbered">
+                            <div class="queue-item-wrapper">
+                            <span class="queue-item-details d-flex gap-m">
+                                <img src="assets/images/songs/English-top/Purple-Lamborghini.jpeg" alt="">
+                                <span class="d-flex col gap-xxs align-start">
+                                <h5 class="">Purple Lamborghini</h5>
+                                <p class="grey-font font-xs">Rick Ross</p>
+                                </span>
+                            </span>
+                            <i class="fa-regular fa-heart font-xs grey-font"></i>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+        </main>
+    </div>
+    <!-- for music player -->
+    <footer>
+        <div class="footer-wrapper d-flex">
+          <section class="music-player--details d-flex gap-m">
+            <img class="w-100 h-100" src="assets/images/songs/English-top/Fireflies.jpeg" alt="">
+            <div class="details-wrapper d-flex gap-l align-start">
+              <span class="d-flex col align-start h-100">
+                <p class="player--music-name white-font ws-nowrap">Fireflies by OWL CITY</p>
+                <p class="player--music-artists grey-font font-xs">OWL CITY</p>
+              </span>
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-ban"></i>
+            </div>
+          </section>
+          <section class="music-player--main-controls fs-0 fg-1 margin-block">
+            <div class="d-flex gap-xs col">
+              <!-- upper main controls -->
+              <div class="music-player--upper-main d-flex">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <span class="circular-outline" >
+                  <i class="fa-solid fa-play"></i>
+                </span>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-repeat"></i>
+              </div>
+              <!-- lower main controls -->
+              <div class="music-player--lower-main d-flex gap-l">
+                <p class="music-player--current-time">1:42</p>
+                <input type="range" class="progress-bar fg-1" id="music-progress-bar" value="40" min="0" max="100" step="1">
+                <p class="music-player--total-time">3:40</p>
+              </div>            
+            </div>
+          </section>
+          <section class="music-player--extra-controls align-self-center font-m">
+            <div class="d-flex gap-l">
+              <i class="fa-solid fa-list-ul"></i>
+              <i class="fa-solid fa-computer"></i>
+              <span class="sound-controls d-flex gap-s">
+                <i class="fa-solid fa-volume-high"></i>
+                <input id="volume-bar" class="progress-bar" type="range" min="0" max="100" value="40" step="1">
+              </span>
+              <i class="fa-solid fa-xmark font-l" title="Stop Music"></i>
+            </div>
+          </section>
+        </div>
+      </footer>
+</body>
+<script src="assets/js/music-player.js"></script>
+<script src="assets/js/artist-page.js"></script>
+</html>

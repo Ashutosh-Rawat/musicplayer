@@ -1,0 +1,333 @@
+@import url(variables-and-fonts.css);
+@import url(navbar.css);
+@import url(sidebar.css);
+@import url(footer.css);
+/* main css starts here */
+:root {
+    /* gap between sidebar and #main-content */
+    --main-sidebar-gap: 5%;
+    /* inline margin value for main section */
+    --side-margin: 5rem;
+    /* margin top value for main section */
+    --top-margin: 3.5rem;
+    --top-padding: 1rem;
+
+    /* latest release section width */
+    --latest-release-width: 86%;
+    /* release tile img width */
+    --release-tile-img: 4.6rem;
+
+    /* min width for artist tiles */
+    --artist-tile-mw: 5rem;
+
+    /* max character width for music names in english top, hindi top section */
+    --max-chr-width: 18ch;
+}
+
+/* main class media queries */
+@media only screen and (max-width:1200px) {
+    :root {
+        --side-margin: 3.6rem;   
+        --max-chr-width: 14ch;
+    }
+}
+@media only screen and (max-width:992px) {
+    :root {
+        --main-sidebar-gap: 4.5%;
+        --top-margin: 3rem;
+        --side-margin: 2rem;   
+        /* latest release width increased */
+        --latest-release-width: 100%;
+    }
+}
+@media only screen and (max-width:768px) {
+    :root {
+        --main-sidebar-gap: 2%;
+        --top-margin: 2.3rem;
+        --side-margin: 1rem;   
+        /* latest release width increased */
+        --latest-release-width: 95%;
+    }
+}
+@media only screen and (max-width:450px) {
+    :root {
+        --side-margin: .6rem;
+        --latest-release-width: 100%;
+    }
+}
+
+
+/* -------------------------------------------------------------- */
+/* main classes starts here */
+main {
+    margin: var(--top-margin) var(--side-margin) calc(1.5*var(--top-margin));
+    padding-top: var(--top-padding);
+    gap: var(--main-sidebar-gap);
+    align-items: flex-start !important;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+/* independent scroll effect for both main content and aside bar */
+#main-content {
+    /* max-width: calc(100% - var(--sidebar-width) - var(--main-sidebar-gap)); */
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--top-margin) - var(--top-padding));
+}
+/* gap between the every sections under main tag */
+.content-divider>*:not(:last-child) {
+    margin-bottom: var(--section-gap);
+}
+
+/* section --------------------- carousels and banner for carousels */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--gap-xl) var(--gap-xs);
+    gap: var(--gap-xs);
+}
+@media only screen and (max-width:768px) {
+    .carousel {
+        padding-inline: 0;
+    }
+}
+.carousel img {
+    transition: transform 0.5s ease, z-index 0.5s;
+    width: 30%;
+    aspect-ratio: calc(16/11);
+    cursor: pointer;
+}
+.carousel:hover img {
+    transform: scale(.8);
+}
+.carousel:hover img:hover {
+    transform: scale(1.2);
+    z-index: 4;
+}
+/* section --------------------- css for latest releases */
+#latest-releases {
+    width: var(--latest-release-width);
+}
+.music-release--wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--gap-m);
+    row-gap: var(--gap-l);
+}
+.music-release--tile {
+    gap: var(--gap-m);
+    padding-right: var(--gap-s);
+}
+.music-release--tile img {
+    width: var(--release-tile-img);
+    aspect-ratio: 1;
+}
+
+/* specific for music release header max character width */
+.music-release--header span:first-child {
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+@media only screen and (450px<=width<768px) {
+    .music-release--header span {
+        font-size: var(--m-font);
+    }
+} 
+/* css for options on each tile (3 dots) */
+.music-release--options {
+    top: calc(-1*var(--gap-xs));
+    right: var(--gap-m);
+    border-radius: 50%;
+}
+.music-release--options:hover {
+    color: var(--outline-grey);
+}
+/* css for clicking more options */
+.music-release--options-list {
+    position: absolute;
+    right: 0;
+    color: var(--clr-black);
+    background-color: var(--primary-text);
+    font-size: var(--xs-font);
+    font-weight: 500;
+    z-index: 5;
+}
+.music-release--options-list i {
+    color: var(--darker-grey);
+    font-size: var(--s-font);
+}
+.music-release--options-list>li {
+    display: flex;
+    gap: var(--gap-s);
+    padding: var(--gap-s) var(--gap-s);
+    text-wrap: nowrap;
+}
+.music-release--options-list li:not(:last-child) {
+    border-bottom: 1px solid var(--clr-black);
+}
+
+/* section ------------------------ css for popular artist */
+.popular-artists--wrapper {
+    gap: var(--gap-m);
+    overflow-x: auto;
+}
+/* css for every artist imgs and tile */
+.popular-artists--tile {
+    gap: var(--gap-xs);
+    flex: 1;
+    min-width: var(--artist-tile-mw);
+}
+.popular-artists--tile a {
+    display: inline-block;
+    width: 100%;
+}
+.popular-artists--img-container {
+    position: relative;
+    width: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+.popular-artists--img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.popular-artists--tile .play-button:hover img {
+    opacity: .7;
+}
+.popular-artists--tile .play-button::after {
+    font-size: 1.3em;
+}
+/* artist name */
+.popular-artists--tile p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    max-width: 85%;
+}
+@media only screen and (max-width:768px) {
+    .popular-artists--tile p {
+        font-size: var(--m-font);
+    }
+}
+/* section ------------------------- css for music genres (music-mixes)*/
+#music-mixes {
+    padding: var(--gap-xs) var(--gap-m);
+    background-color: var(--bg-light-blue);
+    margin-bottom: calc(var(--section-gap) - var(--gap-m));
+}
+.music-mixes--wrapper {
+    gap: var(--gap-s);
+    overflow-x: auto;
+}
+.music-mixes--wrapper li:not(:first-child) {
+    cursor: pointer;
+}
+.music-mixes--wrapper li:first-child{
+    width: 120%;
+    min-width: 5rem;
+}
+/* centering img and applying hover effect on every mixes li */
+/* the centering part is done through center-img-text class implemented in variables-and-fonts */
+.music-mixes--wrapper li:not(:first-child) {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    width: 100%;
+    min-width: 4.5rem;
+    overflow: hidden;
+}
+.musix-mixes--wrapper img {
+    object-fit: cover;
+    transition-duration: .7s;
+}
+.music-mixes--item:hover img {
+    filter: blur(5px);
+}
+.music-mixes--item p {
+    opacity: 0;
+    transition: opacity .7s;
+}
+.music-mixes--item:hover p {
+    opacity: 1;
+}
+
+/* section ---------------------------- css for music-mood (party, electronic, road trip) */
+.music-mood--wrapper {
+    gap: var(--gap-xs);
+}
+.music-mood--wrapper li {
+    aspect-ratio: 1.5;
+    overflow: hidden;
+}
+.music-mood--img-container {
+    padding-top: 66.66%; 
+    /* to adjust the 1.5 aspect-ratio */
+}
+.music-mood--img-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: transform .4s;
+}
+.music-mood--img-container img:first-child {
+    animation: fade-in-out infinite 20s ease-in;
+    z-index: 3;
+}
+/* animation delays to swap images differently on every div */
+.music-mood--wrapper li:nth-child(2) img{
+    animation-delay: 5s;
+}
+.music-mood--wrapper li:last-child img{
+    animation-delay: 10s;
+}
+@keyframes fade-in-out {
+    42% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }    
+    92% {
+        opacity: 0;
+    }
+}
+/* for the hover effect on both the images */
+.music-mood--img-container:hover img {
+    animation-play-state: paused;
+    transform: scale(1.2);
+}
+/* ----------------------------------------------------------------- */
+/* -------------------------------- section for latest english 
+and latest hindi section ------------------------------- */
+#top-hindi ul,#top-english ul {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.top-english--wrapper, .top-hindi--wrapper{
+    overflow: hidden;
+    min-width: 5.5rem;
+}
+.top-english--wrapper>.play-button, .top-hindi--wrapper>.play-button{
+    width: 100%;
+    aspect-ratio: 1;
+}
+.top-english--wrapper img, .top-hindi--wrapper img {
+    object-fit: cover;
+}
+
+/* for song names overflow set */
+.top-hindi--wrapper>*:not(.play-music), .top-english--wrapper>*:not(.play-music) {
+    max-width: var(--max-chr-width);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

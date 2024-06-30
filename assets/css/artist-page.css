@@ -1,0 +1,206 @@
+@import url(variables-and-fonts.css);
+@import url(navbar.css);
+@import url(footer.css);
+@import url(sidebar.css);
+
+
+:root {
+    /* gap between sidebar and #main-content */
+    --main-sidebar-gap: 5%;
+    /* inline margin value for main section */
+    --side-margin: 5rem;
+    /* margin top value for main section */
+    --top-margin: 3.5rem;
+    --top-padding: 1rem;
+
+    /* -------------- this height is for min width of artist-info--img */
+    --info-img-mw: auto;
+
+    --artist-song-width: 2.3rem;
+    /* similar artist img section */
+    --similar-artist-img-height: 4.5rem;
+    /* special font for side bar artist names */
+    --artist-font: .8rem;
+
+    /* to change the scroll behaviour height of recently played music */
+    /* to change height we need similar artist section height too */
+}
+/* media queries ------------------------------- */
+@media only screen and (max-width:1200px) {
+    :root {
+        --side-margin: 3.6rem;
+        /* setting the min-width of artist-info--img */
+        --info-img-mw: 182px;
+    }
+    /* specific css */
+    /* changing height of scroll-behaviour for music queue */
+    aside .scroll-behaviour {
+        max-height: calc(100vh - var(--top-margin) - var(--top-padding) - var(--gap-xl) - 280px) !important;
+    }
+}
+@media only screen and (max-width:992px) {
+    :root {
+        --main-sidebar-gap: 4.5%;
+        --top-margin: 3rem;
+        --side-margin: 2rem;
+        /* artist-info--img min width */
+        --info-img-mw: 182px;
+        /* similar-artist section img max-height */
+        --similar-artist-img-height: 4.05rem;
+        
+    }
+    /* specific css */
+    .artist-info-text {
+        padding-block: var(--gap-xs);
+    }
+}
+@media only screen and (max-width:768px) {
+    :root {
+        --main-sidebar-gap: 2%;
+        --top-margin: 2.3rem;
+        --side-margin: 1rem;   
+    }
+}
+@media only screen and (max-width:450px) {
+    :root {
+        --side-margin: .1rem;
+    }
+}
+
+
+
+
+
+
+/* helper classes */
+.artist-font {
+    font-size: var(--artist-font);
+}
+/* -------------------------------------------------------------- */
+/* main classes starts here */
+main {
+    margin: var(--top-margin) var(--side-margin) calc(1.5*var(--top-margin));
+    padding-top: var(--top-padding);
+    gap: var(--main-sidebar-gap);
+    align-items: flex-start !important;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+/* section ----------------- artist info section */
+#artist-info--upper>* {
+    font-weight: 200;
+}
+#artist-info--upper>*:not(:last-child) {
+    margin-bottom: var(--gap-xs);
+}
+/* for button play all */
+.bg-btn {
+    text-wrap: nowrap;
+    padding: var(--gap-m) calc(1.4*var(--gap-xl));
+    background: linear-gradient(90deg, #3624B0, #C549E0);
+    font-size: var(--xs-font);
+}
+.no-bg-btn {
+    padding: var(--gap-m) calc(1.4*var(--gap-xl));
+    font-size: var(--xs-font);
+}
+.no-bg-btn:hover {
+    background: linear-gradient(90deg, #02558d, #6d0341);
+}
+
+/* section --------------------- artist songs section */
+#artist-songs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+    max-height: calc(100vh - 17*var(--gap-xl));
+    overflow-y: auto;
+}
+/* for background image of artist section */
+#artist-info {
+    display: flex;
+    gap: var(--gap-xl);
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--bg-light-blue);
+}
+.artist-info-text {
+    padding-right: var(--gap-l);
+}
+.artist-info--img {
+    align-self: flex-start;
+    background: url(../images/artists/artist-imagine-dragons.jpeg) center / cover no-repeat;
+    background-color: var(--bg-light-blue);
+    aspect-ratio: 1;
+    width: 100%;
+    min-width: var(--info-img-mw);
+    object-fit: cover;
+    position: relative;
+    border-bottom-left-radius: 50% 13%;
+    border-bottom-right-radius: 50% 13%;
+}
+.artist-info--img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(to top, var(--bg-light-blue), transparent);
+}
+
+.artist-song-item {
+    background-color: rgba(138, 134, 134, 0.1);
+    border-radius: .1rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding-block: var(--gap-xs);
+    padding-right: calc(1.8*var(--gap-xl));
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.artist-song-item img {
+    max-height: var(--artist-song-width);
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+
+/* section ------------------------------ artist page sidebar */
+/* for setting gap between heading and queue items in sidebar */
+#similar-artists>div:first-child,#recently-played>div:first-child {
+    margin-bottom: var(--gap-xl);
+}
+aside>section:not(:last-child) {
+    margin-bottom: calc(1.5*var(--gap-xl));
+}
+/* similar artist css */
+.similar-artist-item {
+    display: flex;
+    justify-content: flex-start;
+}
+.similar-artist-item img {
+    max-height: var(--similar-artist-img-height);
+    aspect-ratio: 1;
+    object-fit: cover;
+    cursor: pointer;
+}
+.artist-info-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+}
+.artist-info-wrapper>i {
+    align-self: flex-end;
+    font-size: var(--m-font);
+    color: var(--outline-grey);
+}
+
+/* changing height of scroll-behaviour for music queue */
+aside .scroll-behaviour {
+    max-height: calc(100vh - var(--top-margin) - var(--top-padding) - var(--gap-xl) - var(--similar-artist-height)) !important;
+}

@@ -1,0 +1,239 @@
+:root {
+    --footer-grey: #282828;
+    /* inline-margin of main-tag or main-content (from main.css)*/
+    --main-margin: var(--side-margin);
+    /* inline-padding of container (from variables-and-fonts.css)*/
+    --container-margin: var(--main-inline-gap);
+    --footer-inline-gap: calc(var(--main-margin) + var(--container-margin));
+    --footer-block-gap: var(--gap-xs);
+    --img-height: 3.4rem;
+    /* this gap is for left middle and right section of footer */
+    --footer-section-gap: 6%;
+
+    /* min width for upper main section */
+    --upper-main--mw: 50%;
+    /* circular size is for the circular outline for the play/pause button */
+    --circular-size: 2.1rem;
+
+    /* Progress bar customization variables */
+    --progress-fill: 40%;
+    --progress-height: 5px;
+    --progress-width: 100%;
+    --progress-radius: 5px;
+    --thumb-size: 13px;
+    --thumb-color: white;
+    --thumb-radius: 50%;
+    --thumb-z-index: 2;
+    --progress-gradient-start: #654ea3;
+    --progress-gradient-end: #eaafc8;
+}
+
+/* media queries */
+@media only screen and (max-width: 1200px) {
+    :root {
+        --footer-section-gap: 5.5%;
+        --circular-size: 2rem;
+        --img-height: 3rem; /* Adjusted height for images */
+        --upper-main--mw: 57%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    :root {
+        --footer-section-gap: 4.2%;
+        --circular-size: 1.8rem;
+        --img-height: 2.6rem;
+        --upper-main--mw: 63%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --footer-section-gap: 3%;
+        --circular-size: 1.6rem;
+        --img-height: 2.3rem;
+        --upper-main--mw: 70%;
+    }
+    /* specific css */
+    .music-player--main-controls>div.d-flex {
+        gap: .2rem;
+    }
+    footer .fa-computer {
+        display: none;
+    }
+}
+@media only screen and (max-width:600px) {
+    :root {
+        /* reducing the paddings now */
+        --footer-inline-gap: var(--container-margin);
+        --footer-section-gap: 0%;
+        /* for music player only */
+        --progress-height: 4px;
+        --thumb-size: 11px;
+    }
+    /* specific css */
+    footer .fa-ban, 
+    footer .fa-volume-high,
+    footer .fa-expand {
+        display: none;
+    }
+    
+    .music-player--details {
+        gap: var(--gap-s) !important;
+    }
+    .details-wrapper {
+        gap: .2rem;
+    }
+    .details-wrapper p {
+        max-width: 9ch;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .music-player--lower-main {
+        gap: var(--gap-s);
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    :root {
+        --footer-inline-gap: .2rem;
+        --footer-block-gap: .2rem;
+        --circular-size: 1.4rem;
+        --img-height: 2rem;
+        --upper-main--mw: 80%;
+        /* for music player only */
+        --thumb-size: 10px;
+    }
+    /* specific css */
+    footer .fa-list-ul,
+    footer .fa-heart {
+        display: none;
+    }
+    .music-player--extra-controls {
+        max-width: 19% !important;
+    }
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    inset-inline: 0;
+    z-index: 20;
+    background-color: var(--footer-grey);
+    color: var(--outline-grey);
+    font-size: var(--s-font);
+    /* initially hide the footer bar */
+    transform: translateY(100%);
+    transition: transform .5s ease-in-out;
+}
+/* class to translate back the footer to view */
+footer.slide-up {
+    transform: translateY(0);
+}
+footer i {
+    cursor: pointer;
+}
+.footer-wrapper {
+    padding-inline: var(--footer-inline-gap);
+    padding-block: var(--footer-block-gap);
+    align-items: flex-start;
+    gap: var(--footer-section-gap);
+}
+.music-player--details {
+    margin-block: auto;
+    height: var(--img-height);
+    overflow: hidden;
+}
+.music-player--details img {
+    height: var(--img-height);
+    width: var(--img-height); 
+    object-fit: cover;
+}
+.details-wrapper {
+    height: 75%;
+}
+/* ----------------------------------- */
+/* this is middle section of footer */
+.music-player--upper-main {
+    min-width: var(--upper-main--mw);
+    font-size: var(--m-font);
+}
+.music-player--lower-main {
+    width: 100%;
+    font-size: var(--s-font);
+}
+/* for the circular outline for pause button */
+.circular-outline {
+    border: 1px solid var(--outline-grey);
+    height: var(--circular-size);
+    width: var(--circular-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.circular-outline i.fa-play {
+    margin-top: 1px;
+    margin-left: 2px;
+    font-size: var(--xs-font);
+}
+/* --------------------------------------------------------------- */
+/* progress-bar css start----------------------------------------- */
+.progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--progress-width);
+    height: var(--progress-height);
+    background: white;
+    border-radius: var(--progress-radius);
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--progress-fill);
+    background: linear-gradient(to right, var(--progress-gradient-start), var(--progress-gradient-end));
+    border-radius: var(--progress-radius);
+    pointer-events: none;
+}
+/* for safari, chrome and opera */
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background: var(--thumb-color);
+    cursor: pointer;
+    border-radius: var(--thumb-radius);
+    position: relative;
+    z-index: var(--thumb-z-index);
+}
+/* for firefox */
+.progress-bar::-moz-range-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background: var(--thumb-color);
+    cursor: pointer;
+    border-radius: var(--thumb-radius);
+    position: relative;
+    z-index: var(--thumb-z-index);
+}
+/* progress-bar css end----------------------------------------- */
+/* --------------------------------------------------------------- */
+
+/* css for extra controls (volumne devices and add to queue options */
+/* the code made for volume bar so that we don't have to change everything just a few variables will do it */
+.music-player--extra-controls {
+    max-width: 22%;
+}
+.music-player--extra-controls .progress-bar::before {
+    --progress-gradient-start: #11b851;
+    --progress-gradient-end: #0d6d0a;
+}

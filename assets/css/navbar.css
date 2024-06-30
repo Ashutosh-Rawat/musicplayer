@@ -1,0 +1,122 @@
+:root {
+    --navbar-inline-inset: 2.2%;
+    /* left and right section min widths */
+    --left-section-mw: 20%;
+    --right-section-mw: 30%;
+    /* navbar-item width */
+    --navbar-item-w: 3rem;
+    /* search bar variables */
+    --search-width: 45%;
+    --search-mw: 15rem;
+    /* profile section padding */
+    --profile-padding: 1.2%;
+}
+/* media queries for navbar */
+@media only screen and (max-width:1200px) {
+    :root {
+        --left-section-mw: 21%;   
+        --right-section-mw: 33%;
+    }
+}
+@media only screen and (max-width:992px) {
+    .left-section {
+        gap: var(--gap-m);
+    }
+    .right-section {
+        gap: var(--gap-m);
+    }
+}
+@media only screen and (max-width:600px) {
+    :root {
+        --left-section-mw: 0;
+        /* reduce space bar mw */
+        --search-width: 48%;
+        --search-mw: 14rem;
+        /* removing profile padding */
+        --profile-padding: 0;
+        /* max width set for logo and img */
+        --navbar-item-w: 2.5rem;
+    }
+    /* media queries for classes */
+    .right-section {
+        margin-left: var(--gap-xl);
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+    .favourites,.notification {
+        display: none;
+    }
+    /* for images and logo */
+    .navbar-item {
+        min-width: 2rem;
+    }
+    .search-bar {
+        margin-inline: auto;
+    }
+}
+@media only screen and (max-width:450px) {
+    :root {
+        --search-mw: 12rem;
+        --left-section-mw: 0;
+        --right-section-mw: 0;
+    }
+    .right-section {
+        margin-left: 0;
+        flex-grow: 1;
+        gap: var(--gap-xl);
+    }
+    .notification {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------- */
+/* navbar clsses starts here */
+nav {
+    /* so that navbar doesn't looses it's width */
+    inset-inline: var(--navbar-inline-inset);
+    /* other properties */
+    background-color: var(--bg-primary-color);
+    padding-top: var(--gap-l);
+    padding-bottom: var(--gap-m);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.left-section {
+    min-width: var(--left-section-mw);
+}
+.right-section {
+    min-width: var(--right-section-mw);
+}
+/* applied to logo and image */
+.navbar-item {
+    max-width: var(--navbar-item-w);
+    aspect-ratio: 1;
+}
+/* -- search bar css */
+.search-bar {
+    min-height: 1.6rem;
+    width: var(--search-width);
+    min-width: var(--search-mw);
+}
+.search-bar input {
+    background-color: var(--bg-light-blue);
+    border: none;
+    border-radius: .4rem;
+    padding: .52rem 1.6rem;
+    color: var(--primary-text);
+}
+.search-bar i {
+    transform: translateY(calc(.8rem - .2rem));
+}
+.search-bar>*:first-child {
+    left: 3%;
+}
+.search-bar>*:last-child {
+    right: 3%;
+}
+.profile {
+    padding: var(--profile-padding);
+}

@@ -1,0 +1,358 @@
+/* css file for common variables and css across both pages */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wdth,wght@0,97.6,100..800;1,97.6,100..800&display=swap');
+
+:root {
+    --bg-primary-color: #0C1027;
+    --bg-light-blue: #12193E;
+    --outline-grey: #93A8B3;
+    --darker-grey: #525d63;
+    --sp-text: #50E3C2;
+    --primary-text: #FFFFFF;
+    --clr-play-btn: #B30B00;
+    --clr-black: #000000;
+    /* font variables */
+    --xs-font: .75rem;
+    --s-font: .86rem;
+    --m-font: 1rem;
+    --md-font: 1.03rem;
+    --l-font: 1.25rem;
+    --xl-font: 1.3rem;
+    --xxl-font: 1.5rem;
+
+    /* gap variables */
+    --gap-xxs: .2rem;
+    --gap-xs: .4rem;
+    --gap-s: .6rem;
+    --gap-m: .65rem;
+    --gap-l: .9rem;
+    --gap-xl: 1.2rem;
+    --main-inline-gap: 1.7rem;
+    --section-gap: 1.6rem;
+
+    /* scrollbar css for padding in scrollbar to hide content */
+    --scrollbar-gap: var(--gap-xl);
+}
+/* ------------------------- media queries */
+@media only screen and (max-width: 1200px) {
+    :root {
+        /* font variables */
+        --m-font: 0.95rem;
+        --l-font: 1.15rem;
+        --xl-font: 1.25rem;
+        /* gap variables */
+        --gap-m: 0.6rem;
+        --gap-l: 0.85rem;
+        --gap-xl: 1.1rem;
+    }
+}
+@media only screen and (max-width: 992px) {
+    :root {
+        /* font variables */
+        --xs-font: .7rem;
+        --s-font: 0.78rem;
+        --m-font: 0.9rem;
+        --l-font: 1.05rem;
+        /* gap variables */
+        --gap-s: 0.5rem;
+        --gap-m: 0.55rem;
+        --gap-l: 0.7rem;
+        --section-gap: 1.3rem;
+        /* main container padding */
+        --main-inline-gap: 1rem;
+        /* scrollbar gap */
+        --scrollbar-gap: var(--gap-m);
+    }
+}
+@media only screen and (max-width: 768px) {
+    :root {
+        /* font variables */
+        --xs-font: 0.65rem;
+        --s-font: 0.72rem;
+        --m-font: 0.76rem;
+        --md-font: 0.95rem;
+        --l-font: 1rem;
+        --xl-font: 1.16rem;
+
+        /* gap variables */
+        --gap-s: 0.3rem;
+        --gap-m: 0.5rem;
+        --gap-l: 0.65rem;
+        --section-gap: .9rem;
+        --main-inline-gap: .8rem;
+        /* srollbar gap */
+        --scrollbar-gap: var(--gap-s);
+    }
+}
+@media only screen and (max-width: 450px) {
+    :root {
+        --main-inline-gap: .2rem;
+    }
+}
+/* -------------------------------------------------------- */
+/* variable classes starts here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font family css */
+    font-family: "Ubuntu Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+ul {
+    list-style-type: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    color: var(--primary-text);
+}
+button:hover {
+    cursor: pointer;
+}
+i:hover {
+    cursor: pointer;
+}
+/*------------------------------- generic helper classes */
+.w-50 {
+    width: 50%;
+}
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+.text-center {
+    text-align: center;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.pointer-hover:hover {
+    cursor: pointer;
+}
+.grey-pointer:hover {
+    cursor: pointer;
+    color: var(--outline-grey);
+}
+/* -------------------------------special classes */
+.ws-nowrap {
+    white-space: nowrap;
+}
+/*------------------------------- display classes */
+.d-hidden {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-inline {
+    display: inline;
+}
+
+/* flex classes */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.align-start {
+    align-items: flex-start;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.align-self-center {
+    align-self: center;
+}
+.fg-1 {
+    flex-grow: 1;
+}
+.fs-0 {
+    flex-shrink: 0;
+}
+.col {
+    flex-direction: column;
+}
+
+/*-------------------------------- borders and margins helper classes*/
+.circular {
+    border-radius: 50%;
+}
+.rounded {
+    border-radius: 1.2rem;
+}
+.small-margin {
+    margin-bottom: var(--gap-s);
+}
+.margin-inline {
+    margin-inline: auto;
+}
+.margin-block {
+    margin-block: auto;
+}
+/* ---------------------------------------------------------- */
+/* -------------------------------------- font helper classes */
+/* font-sizes */
+.font-xs {
+    font-size: var(--xs-font);
+}
+.font-s {
+    font-size: var(--s-font);
+}
+.font-m {
+    font-size: var(--m-font);
+}
+.font-md {
+    font-size: var(--md-font);
+}
+.font-l {
+    font-size: var(--l-font);
+}
+.font-xl {
+    font-size: var(--xl-font);
+}
+.font-xxl {
+    font-size: var(--xxl-font);
+}
+/* font-width */
+.fw-bold {
+    font-weight: bold;
+}
+/* ------------------------------ font colors ----------------- */
+.white-font {
+    color: var(--primary-text);
+}
+.grey-font {
+    color: var(--outline-grey);
+}
+.sp-font-clr {
+    color: var(--sp-text);
+}
+/* ------------------------------- gap classes ----------------- */
+.gap-xxs {
+    gap: var(--gap-xxs);
+}
+.gap-xs {
+    gap: var(--gap-xs);
+}
+.gap-s {
+    gap: var(--gap-s);
+}
+.gap-m {
+    gap: var(--gap-m);
+}
+.gap-l {
+    gap: var(--gap-l);
+}
+.gap-xl {
+    gap: var(--gap-xl);
+}
+/* ------------------------------------------------------------ */
+/* --------------------- specific classes --------------------- */
+.container {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-primary-color);
+    color: var(--primary-text);
+    padding: var(--m-font) var(--main-inline-gap);
+    padding-bottom: 0;
+}
+/* css for play button on hovering over divs */
+.play-button {
+    position: relative;
+    height: 100%;
+}
+.play-button img {
+    width: 100%;
+}
+.play-button::after {
+    content: "\f04b";
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    color: var(--primary-text);
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 5;
+}
+.play-button:hover img {
+    cursor: pointer;
+    opacity: .6;
+}
+.play-button:hover::after {
+    opacity: 1;
+}
+
+/* css for centering text within images 
+(for music-mixes section and music-mood-section)*/
+.center-img-text {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.center-img-text img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.center-img-text p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;  
+    z-index: 10;
+}  
+
+/* this section is for scrolling related section to apply 
+scrolls to particular divs and not outside
+these include main page left section, sidebar section, etc */
+.scroll-behaviour {
+    overscroll-behavior: contain;
+    padding-bottom: calc(3*var(--scrollbar-gap));
+}
+.scroll-behaviour::-webkit-scrollbar {
+    display: none;
+}
+
+/* for sidebar numbering of queue (in home section) and songs 
+numbering (in artist page section) */
+.counter-wrapper {
+    counter-reset: section-counter;
+}
+.numbered {
+    display: flex;
+    align-items: center;
+}
+.numbered::before {
+    padding-block: var(--gap-m);
+    padding-inline: var(--gap-l) var(--gap-xs);
+    content: counter(section-counter, decimal-leading-zero);
+    counter-increment: section-counter;
+    color: var(--darker-grey);
+    font-size: var(--xs-font);
+    vertical-align: middle;
+}
